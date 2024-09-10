@@ -32,16 +32,15 @@ class ArmaghanGateway extends GatewayAbstract {
 
 
     public function sendSMS( array $numbers, $text, $isflash = false ) {
-
         if(!$this->GetCredit()) return;
 
         $number = implode(',', $numbers);
-        $msg    = urlencode(trim($text));
-        $smss  = $this->webService.'originator='.$this->from.'&destination='.$number.'&content='.$msg.'&password='.$this->password.'&username='.$this->username;
-        $ch = curl_init($smss);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        $google = curl_exec($ch);
-        curl_close($ch);
+        $msg    = urlencode(trim(' کاربر گرامی رمز ورود جدید شما:'.$text));
+        $smss  = $this->webService.'username='.$this->username.'&password='.$this->password.'&from='.$this->from.'&to='.$number.'&message='.$msg;
+        $result = file_get_contents($smss);
+        if ($result == 1) {
+            return $result;
+        }
     }
 
 

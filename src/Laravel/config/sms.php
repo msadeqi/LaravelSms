@@ -16,7 +16,7 @@ return [
 		    'username'   => '',
 		    'password'   => '',
 		    'from'       => '',
-		],		
+		],
 		'azinweb'       => [
 			'website'    => 'http://azinweb.com',
 			'webService' => 'http://sms.azin-sms.ir/API/send.asmx?WSDL',
@@ -265,7 +265,7 @@ return [
         ],
         'armaghan'       => [
             'website'    => 'https://negar.armaghan.net',
-            'webService' => 'https://negar.armaghan.net/sms/url_send.html?',
+            'webService' => 'https://negar.armaghan.net/webservice/rest/sendOneToOne?',
             'username'   => '',
             'password'   => '',
             'from'       => '',
